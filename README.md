@@ -1,7 +1,5 @@
 # AMP Application Manager - Complete Guide
 
-![AMP Logo](https://cubecoders.com/assets/images/CubeCoders_White.webp)
-
 A comprehensive guide and reference for managing AMP (Application Management Panel) instances from [CubeCoders](https://cubecoders.com/).
 
 ## 🚀 Quick Reference
@@ -202,17 +200,12 @@ free -h
 
 ### Official Documentation
 - [CubeCoders AMP Documentation](https://github.com/CubeCoders/AMP/wiki)
-- [AMP Command Reference](https://github.com/CubeCoders/AMP/wiki/Command-Reference)
-- [Module Documentation](https://github.com/CubeCoders/AMP/wiki/Module-Documentation)
+
 
 ### Community Resources
 - [AMP Discord Server](https://discord.gg/cubecoders)
 - [Reddit r/AMP](https://reddit.com/r/AMP)
 - [Support Portal](https://support.cubecoders.com/)
-
-### Helpful Tools
-- [AMP Instance Manager GUI](https://github.com/CubeCoders/AMP/wiki/Web-Interface)
-- [AMP API Documentation](https://github.com/CubeCoders/AMP/wiki/API-Documentation)
 
 ## 📁 Configuration Files
 
