@@ -1,6 +1,6 @@
 # AMP Application Manager - Complete Guide
 
-![AMP Logo](<img width="1466" height="308" alt="image" src="https://github.com/user-attachments/assets/e65075d7-521e-4d31-8f5a-ebefcf1dba1c" />)
+![AMP Logo](https://cubecoders.com/assets/images/CubeCoders_White.webp)
 
 A comprehensive guide and reference for managing AMP (Application Management Panel) instances from [CubeCoders](https://cubecoders.com/).
 
