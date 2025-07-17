@@ -1,21 +1,8 @@
 # AMP Application Manager - Complete Guide
 
-![AMP Logo](https://cubecoders.com/img/amp-logo.png)
+![AMP Logo](<img width="1466" height="308" alt="image" src="https://github.com/user-attachments/assets/e65075d7-521e-4d31-8f5a-ebefcf1dba1c" />)
 
 A comprehensive guide and reference for managing AMP (Application Management Panel) instances from [CubeCoders](https://cubecoders.com/).
-
-## 📋 Table of Contents
-
-- [Quick Reference](#quick-reference)
-- [Installation](#installation)
-- [Daily Operations](#daily-operations)
-- [Update Procedures](#update-procedures)
-- [Instance Management](#instance-management)
-- [Troubleshooting](#troubleshooting)
-- [Useful Resources](#useful-resources)
-- [Configuration Files](#configuration-files)
-- [Security](#security)
-- [Backup Procedures](#backup-procedures)
 
 ## 🚀 Quick Reference
 
