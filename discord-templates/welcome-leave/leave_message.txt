@@ -1,1 +1,18 @@
+# Trigger "A user leaves the server"
+# Choose Post an embed message on Discord and setup as follow:
 
+Name:                  Value:
+WebhookURL             https://discord.com/api/webhooks/xxx
+Title                  {@User} has left the server!
+Description            {@User} has survived… for now! They’ve left the island, but we hope to see them back soon for more adventures.
+ColorHex               #FF0000 (Red)
+Url                    https://steamcommunity.com/profiles/{@UserID}
+DisplayUsername        Kelvin
+ImageURL               
+ThumbnailURL           https://sonsoftheforest.wiki.gg/images/thumb/2/22/Portrait_Kelvin.png/300px-Portrait_Kelvin.png
+FooterText             See you next time!
+FooterIconURL          
+ButtonLabel            View Steam Profile
+ButtonUrl              https://steamcommunity.com/profiles/{@UserID}
+ExistingMessageId
+AvatarUrl              https://sonsoftheforest.wiki.gg/images/thumb/2/22/Portrait_Kelvin.png/300px-Portrait_Kelvin.png
