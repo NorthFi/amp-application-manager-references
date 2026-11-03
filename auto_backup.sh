@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# root/auto_backup.sh
+set -Eeuo pipefail
 # AMP Automated Backup Script
 # Place in: /home/amp/scripts/auto_backup.sh
 # Make executable: chmod +x /home/amp/scripts/auto_backup.sh
@@ -7,10 +9,19 @@
 BACKUP_DIR="/opt/cubecoders/amp/backups"
 LOG_FILE="/var/log/amp_backup.log"
 RETENTION_DAYS=30
-DISCORD_WEBHOOK_URL=""  # Optional: Add your Discord webhook URL for notifications
+DISCORD_WEBHOOK_URL="${DISCORD_WEBHOOK_URL:-}"  # Optional webhook via environment
 
 # Create log directory if it doesn't exist
 sudo mkdir -p "$(dirname "$LOG_FILE")"
+
+# Never run retention against a missing, root, or unexpected backup directory.
+verify_backup_directory() {
+    if [[ ! -d "$BACKUP_DIR" || "$BACKUP_DIR" == "/" ]]; then
+        printf "Invalid or missing backup directory: %s\\n" "$BACKUP_DIR" >&2
+        return 1
+    fi
+}
+
 
 # Function to log messages
 log_message() {
@@ -29,6 +40,7 @@ send_discord_notification() {
 
 # Function to cleanup old backups
 cleanup_old_backups() {
+    verify_backup_directory || return 1
     log_message "Cleaning up backups older than $RETENTION_DAYS days"
     find "$BACKUP_DIR" -name "*.zip" -type f -mtime +$RETENTION_DAYS -delete
     log_message "Cleanup completed"
@@ -36,10 +48,12 @@ cleanup_old_backups() {
 
 # Function to check disk space
 check_disk_space() {
-    local available_space=$(df "$BACKUP_DIR" | awk 'NR==2 {print $4}')
+    verify_backup_directory || return 1
+    local available_space
+    available_space=$(df -Pk "$BACKUP_DIR" | awk 'NR==2 {print $4}')
     local required_space=1048576  # 1GB in KB
     
-    if [ "$available_space" -lt "$required_space" ]; then
+    if [[ ! "$available_space" =~ ^[0-9]+$ ]] || [ "$available_space" -lt "$required_space" ]; then
         log_message "WARNING: Low disk space available for backups"
         send_discord_notification "⚠️ Low disk space for AMP backups!"
         return 1
