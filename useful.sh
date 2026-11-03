@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+# root/useful.sh
 # Updating the instance manager
 sudo su -l
 getamp update
